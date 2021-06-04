@@ -45,8 +45,44 @@ function checkSrc(v){
      return v;
 }
 
-// -- TO DO create function pickCard with paracmeter of tileIndex and t
+// -- TO DO create function pickCard with parameter of tileIndex and t
+function pickCard(tileIndex, t){
+    // check if its already flipped
+    if(!isinArray(t.id, tileFlippedOver) && !playLockout){
+        message.innerHTML = "Check for match";
+         //check if its already flipped
+         if(cardFlipped >= 0){
+             //second cardFlipped
+             cardFlip(t, tileIndex);
+             var secondCard = tileIndex;
+             playLockout = true;
+              // check for match
+              // first card index 1
+              // second card index ?
+              // [0, 1]
+              if(checkSrc(tileFlippedOver[tileFlippedOver.length - 1]) == checkSrc(tileFlippedOver[tileFlippedOver.length - 2])){
+                // match
+                message.innerHTML = "Good job!";
+                playLockout = false;
+                cardFlipped = -1;
 
+                // Check if game is over
+                if(tileFlippedOver.length == tileArray.length){
+                    gameOver();
+                }
+              } else{
+                  message.innerHTML = "Not a match!";
+                  timer = setInterval(hideCard, 300);
+              }
+         } else{
+            cardFlipped = tileIndex;
+            //first cardFlipped
+            cardFlip(t, tileIndex);
+         }
+    } else{
+        message.innerHTML = "The card has already been selected.";
+    }
+}
 
 
 
