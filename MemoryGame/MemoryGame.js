@@ -13,7 +13,7 @@ var message = document.getElementById('message');
 //event listens
 startButton.addEventListener('click', startGame);
 
-<<<<<<< HEAD
+
 function cardFlip(t, ti){
     t.src = 'images/' +  tileArray[ti];
     tileFlipOver.push(t.id);
@@ -127,21 +127,21 @@ function pickCard(tileIndex, t){
 
 
 function buildArray(){
-<<<<<<< HEAD
+
     for(var x = 1; x < 7; x++){
         titleImages.push(x+'.jpg');
         // 1.jpg
-=======
+
 
     for(var x = 1; x < 7; x++){
         titleImages.push(x+'.jpg');
     
->>>>>>> 083d768092106425582351822d69f4f4eef58d47
+
     }
 
 }
 
-<<<<<<< HEAD
+
  //Shuffling image in array
 function shuffleArray(array){
     // largest to smallest array.
@@ -165,7 +165,7 @@ function buildBoard(){
 
     gameBoard.innerHTML = html;
     
-=======
+
 //reset everything.
 function gameOver(){
     startButton.style.display = 'block';
@@ -216,5 +216,5 @@ function shuffleArray(array){
         
     }
     return(array); 
->>>>>>> 083d768092106425582351822d69f4f4eef58d47
+
 }
